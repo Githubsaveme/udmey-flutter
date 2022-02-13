@@ -4,17 +4,26 @@ import 'dart:math';
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('ASK ME ANYTHING'),
-          shadowColor: Colors.red,
-          centerTitle: true,
-        ),
-        body: const MagicBall(),
-      ),
+      home:Appbar(),
     ),
   );
 }
+class Appbar extends StatelessWidget {
+  const Appbar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ASK ME ANYTHING',style: TextStyle(color: Colors.red),),
+        shadowColor: Colors.red,
+        centerTitle: true,
+      ),
+      body: const MagicBall(),
+    );
+  }
+}
+
 
 class MagicBall extends StatefulWidget {
   const MagicBall({Key? key}) : super(key: key);
