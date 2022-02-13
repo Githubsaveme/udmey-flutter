@@ -24,7 +24,9 @@ class MagicBall extends StatefulWidget {
 
 class _MagicBallState extends State<MagicBall> {
   int ballNumber = 5;
-
+  void Ballchanges (){
+    ballNumber=Random().nextInt(5)+1;
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,7 +35,7 @@ class _MagicBallState extends State<MagicBall> {
         // ignore: deprecated_member_use
         FlatButton(
           onPressed: () {setState(() {
-            ballNumber=Random().nextInt(5)+1;
+           Ballchanges();
             print('BallNumber$ballNumber');
           });
 
