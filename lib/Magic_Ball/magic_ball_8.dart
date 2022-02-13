@@ -15,13 +15,18 @@ class Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow,
       appBar: AppBar(
+        backgroundColor: Colors.black12,
         title: Text(
           'ASK ME ANYTHING',
           style: TextStyle(
-              color: Colors.red, letterSpacing: 12, fontFamily: 'Source'),
+            color: Colors.white,
+            letterSpacing: 5,
+            fontFamily: 'Source',
+          ),
         ),
-        shadowColor: Colors.red,
+        shadowColor: Colors.yellow.shade100,
         centerTitle: true,
       ),
       body: const MagicBall(),

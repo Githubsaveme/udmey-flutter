@@ -35,3 +35,7 @@ flutter:
     - family: Source
       fonts:
         - asset: fonts/SourceSansPro-Regular.ttf
+
+    - family: Shizuru
+      fonts:
+            - asset: fonts/Shizuru-Regular.ttf
