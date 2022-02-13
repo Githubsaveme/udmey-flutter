@@ -43,6 +43,8 @@ class _DicePageState extends State<DicePage> {
                 onPressed: () {
                   setState(() {
                     left = Random().nextInt(6) + 1;
+                    right = Random().nextInt(6) + 1; // 1-6
+
                   });
                 },
                 child: Image.asset(
@@ -59,6 +61,8 @@ class _DicePageState extends State<DicePage> {
                 onPressed: () {
                   setState(() {
                     right = Random().nextInt(6) + 1; // 1-6
+                    left = Random().nextInt(6) + 1;
+
                   });
                 },
                 child: Image.asset(
@@ -67,7 +71,7 @@ class _DicePageState extends State<DicePage> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
