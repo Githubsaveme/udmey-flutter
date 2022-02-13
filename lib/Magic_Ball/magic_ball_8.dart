@@ -4,10 +4,11 @@ import 'dart:math';
 void main() {
   runApp(
     MaterialApp(
-      home:Appbar(),
+      home: Appbar(),
     ),
   );
 }
+
 class Appbar extends StatelessWidget {
   const Appbar({Key? key}) : super(key: key);
 
@@ -15,7 +16,13 @@ class Appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ASK ME ANYTHING',style: TextStyle(color: Colors.red),),
+        title: Text(
+          'ASK ME ANYTHING',
+          style: TextStyle(
+            color: Colors.red,
+            letterSpacing: 12,
+          ),
+        ),
         shadowColor: Colors.red,
         centerTitle: true,
       ),
@@ -23,7 +30,6 @@ class Appbar extends StatelessWidget {
     );
   }
 }
-
 
 class MagicBall extends StatefulWidget {
   const MagicBall({Key? key}) : super(key: key);
@@ -33,9 +39,10 @@ class MagicBall extends StatefulWidget {
 
 class _MagicBallState extends State<MagicBall> {
   int ballNumber = 5;
-  void Ballchanges (){
-    ballNumber=Random().nextInt(5)+1;
+  void Ballchanges() {
+    ballNumber = Random().nextInt(5) + 1;
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,11 +50,11 @@ class _MagicBallState extends State<MagicBall> {
       children: [
         // ignore: deprecated_member_use
         FlatButton(
-          onPressed: () {setState(() {
-           Ballchanges();
-            print('BallNumber$ballNumber');
-          });
-
+          onPressed: () {
+            setState(() {
+              Ballchanges();
+              print('BallNumber$ballNumber');
+            });
           },
           child: Padding(
             padding: const EdgeInsets.all(8.0),
