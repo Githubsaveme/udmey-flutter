@@ -19,9 +19,7 @@ class Appbar extends StatelessWidget {
         title: Text(
           'ASK ME ANYTHING',
           style: TextStyle(
-            color: Colors.red,
-            letterSpacing: 12,
-          ),
+              color: Colors.red, letterSpacing: 12, fontFamily: 'Source'),
         ),
         shadowColor: Colors.red,
         centerTitle: true,
