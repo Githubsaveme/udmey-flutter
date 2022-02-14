@@ -18,7 +18,7 @@ class XylophoneApp extends StatelessWidget {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(height: 100,
+            Expanded(
               child: FlatButton(
                 color: Colors.red,
                 onPressed: () {
@@ -27,7 +27,7 @@ class XylophoneApp extends StatelessWidget {
                 child: Text('Red'),
               ),
             ),
-            Container(height: 100,
+            Expanded(
               child: FlatButton(
                 color: Colors.cyan,
                 onPressed: () {
@@ -36,7 +36,7 @@ class XylophoneApp extends StatelessWidget {
                 child: Text('cyan'),
               ),
             ),
-            Container(height: 100,
+            Expanded(
               child: FlatButton(
                 color: Colors.pink.shade700,
                 onPressed: () {
@@ -45,7 +45,7 @@ class XylophoneApp extends StatelessWidget {
                 child: Text('pink'),
               ),
             ),
-            Container(height: 100,
+            Expanded(
               child: FlatButton(
                 color: Colors.purple,
                 onPressed: () {
@@ -54,7 +54,7 @@ class XylophoneApp extends StatelessWidget {
                 child: Text('purple'),
               ),
             ),
-            Container(height: 100,
+            Expanded(
               child: FlatButton(
                 color: Colors.green,
                 onPressed: () {
@@ -63,7 +63,7 @@ class XylophoneApp extends StatelessWidget {
                 child: Text('green'),
               ),
             ),
-            Container(height: 100,
+            Expanded(
               child: FlatButton(
                 color: Colors.blue,
                 onPressed: () {
@@ -72,7 +72,7 @@ class XylophoneApp extends StatelessWidget {
                 child: Text('blue'),
               ),
             ),
-            Container(height: 55,
+            Expanded(
               child: FlatButton(
                 color: Colors.yellow,
                 onPressed: () {
