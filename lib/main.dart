@@ -60,8 +60,6 @@ class _QuizPageState extends State<QuizPage> {
   // //Constructor fetch From question.dart
   // Question q1=Question(q:'You can lead a cow down stairs but not up stairs.', a:false );
 
-  int questionNumber = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -74,7 +72,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.getQuestionText(questionNumber),
+                quizBrain.getQuestionText(),
                 //'This is where the question text will go.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -88,6 +86,7 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
+            // ignore: deprecated_member_use
             child: FlatButton(
               textColor: Colors.white,
               color: Colors.green,
@@ -99,17 +98,15 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer =
-                    quizBrain.getCorrectAnswer(questionNumber);
+                bool correctAnswer = quizBrain.getCorrectAnswer();
                 if (correctAnswer == true) {
                   print('User got it right');
                 } else {
                   print('user got it wrong');
                 }
                 setState(() {
-                  questionNumber++;
+                  quizBrain.nextQuestion();
                 });
-                print(questionNumber);
 
                 // //The user picked true.
                 // setState(() {
@@ -127,6 +124,7 @@ class _QuizPageState extends State<QuizPage> {
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
+            // ignore: deprecated_member_use
             child: FlatButton(
               color: Colors.red,
               child: Text(
@@ -137,17 +135,15 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer =
-                    quizBrain.getCorrectAnswer(questionNumber);
+                bool correctAnswer = quizBrain.getCorrectAnswer();
                 if (correctAnswer == false) {
                   print('User got it right');
                 } else {
                   print('user got it wrong');
                 }
                 setState(() {
-                  questionNumber++;
+                  quizBrain.nextQuestion();
                 });
-                print(questionNumber);
 
                 //The user picked false.
                 // setState(() {
