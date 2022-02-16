@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizzler/quiz_brain.dart';
 
-QuizBrain quizBrain=QuizBrain();
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -60,8 +60,7 @@ class _QuizPageState extends State<QuizPage> {
   // //Constructor fetch From question.dart
   // Question q1=Question(q:'You can lead a cow down stairs but not up stairs.', a:false );
 
-
-  int questionNumber=0;
+  int questionNumber = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +74,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                 quizBrain.questionBank[questionNumber].questionText,
+                quizBrain.getQuestionText(questionNumber),
                 //'This is where the question text will go.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -100,10 +99,11 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer=quizBrain.questionBank[questionNumber].questionAnswer;
-                if(correctAnswer == true) {
+                bool correctAnswer =
+                    quizBrain.getCorrectAnswer(questionNumber);
+                if (correctAnswer == true) {
                   print('User got it right');
-                }else{
+                } else {
                   print('user got it wrong');
                 }
                 setState(() {
@@ -137,17 +137,17 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer=quizBrain.questionBank[questionNumber].questionAnswer;
-                if(correctAnswer == false) {
+                bool correctAnswer =
+                    quizBrain.getCorrectAnswer(questionNumber);
+                if (correctAnswer == false) {
                   print('User got it right');
-                }else{
+                } else {
                   print('user got it wrong');
                 }
                 setState(() {
                   questionNumber++;
                 });
                 print(questionNumber);
-
 
                 //The user picked false.
                 // setState(() {
