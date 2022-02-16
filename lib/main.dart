@@ -69,7 +69,8 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                 questions[questionNumber],
+                //'This is where the question text will go.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -93,6 +94,16 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer=answer[questionNumber];
+                if(correctAnswer == true) {
+                  print('User got it right');
+                }else{
+                  print('user got it wrong');
+                }
+                setState(() {
+                  questionNumber++;
+                });
+                print(questionNumber);
 
                 // //The user picked true.
                 // setState(() {
