@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quizzler/quiz_brain.dart';
-import 'question.dart';
+
+QuizBrain quizBrain=QuizBrain();
+
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -73,7 +75,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                 QuizBrain().questionBank[questionNumber].questionText,
+                 quizBrain.questionBank[questionNumber].questionText,
                 //'This is where the question text will go.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
