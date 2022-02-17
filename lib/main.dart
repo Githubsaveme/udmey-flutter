@@ -98,15 +98,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = quizBrain.getCorrectAnswer();
-                if (correctAnswer == true) {
-                  print('User got it right');
-                } else {
-                  print('user got it wrong');
-                }
-                setState(() {
-                  quizBrain.nextQuestion();
-                });
+                checkAnswer(true);
 
                 // //The user picked true.
                 // setState(() {
@@ -135,15 +127,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = quizBrain.getCorrectAnswer();
-                if (correctAnswer == false) {
-                  print('User got it right');
-                } else {
-                  print('user got it wrong');
-                }
-                setState(() {
-                  quizBrain.nextQuestion();
-                });
+                checkAnswer(false);
 
                 //The user picked false.
                 // setState(() {
