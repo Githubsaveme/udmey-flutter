@@ -3,9 +3,5 @@ class Question {
   bool questionAnswer;
 
   //Constructor
-  Question(String s,bool a){
-    questionText = s;
-    questionAnswer= a;
-
-  }
+  Question(this.questionText,this.questionAnswer);
 }
