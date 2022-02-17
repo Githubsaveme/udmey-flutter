@@ -28,28 +28,25 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  // List <Icon> scoreKeeper = [
-  //   Icon(
-  //     Icons.check,
-  //     color: Colors.green,
-  //   ),
-  //   Icon(
-  //     Icons.close_rounded,
-  //     color: Colors.red,
-  //   ),
-  //   Icon(
-  //     Icons.close_rounded,
-  //     color: Colors.red,
-  //   ),
-  //   Icon(
-  //     Icons.close_rounded,
-  //     color: Colors.red,
-  //   ),
-  //   Icon(
-  //     Icons.close_rounded,
-  //     color: Colors.red,
-  //   ),
-  // ];
+  List<Icon> scoreKeeper = [];
+
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAnswer = quizBrain.getCorrectAnswer();
+    if (userPickedAnswer == correctAnswer) {
+      scoreKeeper.add(Icon(
+        Icons.check,
+        color: Colors.green,
+      ));
+    } else {
+      scoreKeeper.add(Icon(
+        Icons.close,
+        color: Colors.red,
+      ));
+    }
+    setState(() {
+      quizBrain.nextQuestion();
+    });
+  }
 
   // List <String> questions =[
   //    'You can lead a cow down stairs but not up stairs.',
@@ -142,9 +139,9 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        // Row(
-        //   children: scoreKeeper,
-        // )
+        Row(
+          children: scoreKeeper,
+        )
       ],
     );
   }
