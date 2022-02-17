@@ -37,10 +37,28 @@ class _QuizPageState extends State<QuizPage> {
       if (quizBrain.isFinished() == true) {
         Alert(
           context: context,
-          title: 'Finished',
-          desc: 'you\'ve reached the end of the Quiz',
+          type: AlertType.info,
+          title: " ALERT",
+          desc: "you\'ve reached the end of the Quiz.",
+          buttons: [
+            DialogButton(
+              child: Text(
+                "FINISHED",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onPressed: () => Navigator.pop(context),
+              color: Colors.red,
+              radius: BorderRadius.circular(0.0),
+            ),
+          ],
         ).show();
-        quizBrain.reset();
+
+        // Alert(
+        //   context: context,
+        //   title: 'Finished',
+        //   desc: 'you\'ve reached the end of the Quiz',
+        // ).show();
+        // quizBrain.reset();
         scoreKeeper = [];
       } else {
         if (userPickedAnswer == correctAnswer) {
