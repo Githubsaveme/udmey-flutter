@@ -35,15 +35,7 @@ class _InputPageState extends State<InputPage> {
               child: Row(
             children: [
               Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1D1F33),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  height: 200,
-                  width: 170,
-                ),
+                child: ReusableCard(),
               ),
               Expanded(
                 child: Container(
@@ -101,6 +93,25 @@ class _InputPageState extends State<InputPage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  const ReusableCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color(0xFF1D1F33),
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      height: 200,
+      width: 170,
     );
   }
 }
