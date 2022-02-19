@@ -5,6 +5,7 @@ import 'reusable_card.dart';
 
 const bottomContainerHeight = 80.0;
 const activeCardColor = Color(0xFF0A0D22);
+const inactiveCardColor = Color(0xFF111328);
 const bottomContainerColor = Color(0xFFEB1555);
 
 void main() => runApp(BMICalculator());
@@ -29,6 +30,9 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleCardColor = inactiveCardColor;
+  Color femaleCardColor = inactiveCardColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +54,7 @@ class _InputPageState extends State<InputPage> {
                       print('Hello');
                     },
                     child: ReusableCard(
-                      colour: activeCardColor,
+                      colour: maleCardColor,
                       cardChild: IconContent(
                           icon: FontAwesomeIcons.mars, label: 'MALE'),
                     ),
@@ -58,7 +62,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColor,
+                    colour: femaleCardColor,
                     cardChild: IconContent(
                         icon: FontAwesomeIcons.venus, label: 'FEMALE'),
                   ),
