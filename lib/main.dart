@@ -4,6 +4,7 @@ import 'dart:ui';
 
 const bottomContainerHeight = 80.0;
 const activeCardColor = Color(0xFF0A0D22);
+const bottomContainerColor = Color(0xFFEB1555);
 
 void main() => runApp(BMICalculator());
 
@@ -75,7 +76,7 @@ class _InputPageState extends State<InputPage> {
             ],
           )),
           Container(
-            color: Color(0xFFEB1555),
+            color: bottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
             height: bottomContainerHeight,
