@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 const bottomContainerHeight = 80.0;
+const activeCardColor = Color(0xFF0A0D22);
 
 void main() => runApp(BMICalculator());
 
@@ -33,7 +34,6 @@ class _InputPageState extends State<InputPage> {
         title: Center(
           child: Text(
             'BMI CALCULATOR',
-            style: TextStyle(color: Colors.redAccent),
           ),
         ),
       ),
@@ -44,19 +44,19 @@ class _InputPageState extends State<InputPage> {
             children: [
               Expanded(
                 child: ReusableCard(
-                  colour: Color(0xFF1D1F33),
+                  colour: activeCardColor,
                 ),
               ),
               Expanded(
                 child: ReusableCard(
-                  colour: Color(0xFF1D1F33),
+                  colour: activeCardColor,
                 ),
               )
             ],
           )),
           Expanded(
             child: ReusableCard(
-              colour: Color(0xFF1D1F33),
+              colour: activeCardColor,
             ),
           ),
           Expanded(
@@ -64,12 +64,12 @@ class _InputPageState extends State<InputPage> {
             children: [
               Expanded(
                 child: ReusableCard(
-                  colour: Color(0xFF1D1F33),
+                  colour: activeCardColor,
                 ),
               ),
               Expanded(
                 child: ReusableCard(
-                  colour: Color(0xFF1D1F33),
+                  colour: activeCardColor,
                 ),
               )
             ],
