@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -27,7 +28,12 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Center(
+          child: Text(
+            'BMI CALCULATOR',
+            style: TextStyle(color: Colors.redAccent),
+          ),
+        ),
       ),
       body: Column(
         children: [
@@ -61,22 +67,25 @@ class _InputPageState extends State<InputPage> {
               ),
               Expanded(
                 child: ReusableCard(
-                  colour: Colors.red,
+                  colour: Color(0xFF1D1F33),
                 ),
               )
             ],
           )),
+          Container(
+            color: Color(0xFFEB1555),
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: 80.0,
+          )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
       ),
     );
   }
 }
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({this.colour});
+  ReusableCard({@required this.colour});
 
   final Color colour;
 
@@ -89,7 +98,7 @@ class ReusableCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       height: 200,
-      width: 170,
+      width: 350,
     );
   }
 }
