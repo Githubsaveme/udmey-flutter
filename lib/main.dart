@@ -88,9 +88,12 @@ class _InputPageState extends State<InputPage> {
 }
 
 class IconContent extends StatelessWidget {
-  const IconContent({
-    Key key,
-  }) : super(key: key);
+
+  final IconData icon;
+
+  final String label;
+
+  const IconContent({Key key, this.icon, this.label}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
