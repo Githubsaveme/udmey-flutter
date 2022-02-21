@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
@@ -17,7 +18,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-
+  int height = 180;
   // Color maleCardColor = inactiveCardColor;
   // Color femaleCardColor = inactiveCardColor;
   //
@@ -52,6 +53,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -91,9 +93,38 @@ class _InputPageState extends State<InputPage> {
             child: ReusableCard(
               colour: KActiveCardColor,
               cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'HEIGHT',
+                    style: KLabelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        height.toString(),
+                        style: KNumberTextStyle,
+                      ),
+                      Text(
+                        'cm',
+                        style: KNumberTextStyle,
+                      )
+                    ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 120,
+                    max: 220,
+                    activeColor:Color(0xFFEB1555) ,
+                    inactiveColor:Color(0xFF8D8E98) ,
+                    onChanged: (double newValue){
+                      setState(() {
+                        height=newValue.round();
+                      });
+                    },
                   ),
                 ],
               ),
