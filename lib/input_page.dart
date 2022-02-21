@@ -64,8 +64,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.male
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? KActiveCardColor
+                        : KInactiveCardColor,
                     cardChild:
                         IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
                   ),
@@ -78,8 +78,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.female
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? KActiveCardColor
+                        : KInactiveCardColor,
                     cardChild: IconContent(
                         icon: FontAwesomeIcons.venus, label: 'FEMALE'),
                   ),
@@ -89,7 +89,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              colour: activeCardColor,
+              colour: KActiveCardColor,
               cardChild: Column(
                 children: [
                   Text(
@@ -104,21 +104,21 @@ class _InputPageState extends State<InputPage> {
             children: [
               Expanded(
                 child: ReusableCard(
-                  colour: activeCardColor,
+                  colour: KActiveCardColor,
                 ),
               ),
               Expanded(
                 child: ReusableCard(
-                  colour: activeCardColor,
+                  colour: KActiveCardColor,
                 ),
               )
             ],
           )),
           Container(
-            color: bottomContainerColor,
+            color: KBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: KBottomContainerHeight,
           )
         ],
       ),
