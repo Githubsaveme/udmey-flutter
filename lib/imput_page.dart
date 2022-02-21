@@ -19,28 +19,30 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
 
-  //1=male, 2=female
-  void updateColor(Gender selectedGender) {
-    //male card Pressed
-    if (selectedGender == Gender.MALE) {
-      if (maleCardColor == inactiveCardColor) {
-        maleCardColor = activeCardColor;
-        femaleCardColor = inactiveCardColor;
-      } else {
-        maleCardColor = inactiveCardColor;
-      }
-    }
-    //female
-    if (selectedGender == Gender.FEMALE) if (femaleCardColor == inactiveCardColor) {
-      femaleCardColor = activeCardColor;
-      maleCardColor = inactiveCardColor;
-    } else {
-      femaleCardColor = inactiveCardColor;
-    }
-  }
+
+  // Color maleCardColor = inactiveCardColor;
+  // Color femaleCardColor = inactiveCardColor;
+  //
+  // //1=male, 2=female
+  // void updateColor(Gender selectedGender) {
+  //   //male card Pressed
+  //   if (selectedGender == Gender.MALE) {
+  //     if (maleCardColor == inactiveCardColor) {
+  //       maleCardColor = activeCardColor;
+  //       femaleCardColor = inactiveCardColor;
+  //     } else {
+  //       maleCardColor = inactiveCardColor;
+  //     }
+  //   }
+  //   //female
+  //   if (selectedGender == Gender.FEMALE) if (femaleCardColor == inactiveCardColor) {
+  //     femaleCardColor = activeCardColor;
+  //     maleCardColor = inactiveCardColor;
+  //   } else {
+  //     femaleCardColor = inactiveCardColor;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
