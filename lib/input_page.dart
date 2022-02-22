@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
+import 'results_page.dart';
 
 import 'constants.dart';
 
@@ -231,10 +231,25 @@ class _InputPageState extends State<InputPage> {
               )
             ],
           )),
-          GestureDetector(onTap: (){},
-            child: Container(child: Text("CALCULATE"),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultPage()));
+            },
+            child: Container(
+              child: Center(
+                child: Text(
+                  "CALCULATE",
+                  style: KLargeButtonTextStyle,
+                ),
+              ),
               color: KBottomContainerColor,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: EdgeInsets.only(
+                top: 10.0,
+              ),
+              padding: EdgeInsets.only(
+                bottom: 20,
+              ),
               width: double.infinity,
               height: KBottomContainerHeight,
             ),
