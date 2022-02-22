@@ -162,7 +162,9 @@ class _InputPageState extends State<InputPage> {
                         children: [
                           RoundIconButton(
                             icon: FontAwesomeIcons.minus,onPressed: (){
-                              weight--;
+                              setState(() {
+                                weight--;
+                              });
                           },
                           ),
                           SizedBox(
@@ -170,7 +172,9 @@ class _InputPageState extends State<InputPage> {
                           ),
                           RoundIconButton(
                             icon: FontAwesomeIcons.plus,onPressed: (){
-                              weight++;
+                              setState(() {
+                                weight++;
+                              });
                           },
                           ),
                         ],
