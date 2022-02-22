@@ -1,6 +1,7 @@
+import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
-import 'reusable_card.dart';
+import '../components/reusable_card.dart';
 
 class ResultPage extends StatelessWidget {
   @override
@@ -17,7 +18,8 @@ class ResultPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Container(
+            child: Container(padding: EdgeInsets.all(15),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
                 style: KTitleTextStyle,
@@ -49,6 +51,12 @@ class ResultPage extends StatelessWidget {
               ),
             ),
           ),
+          BottomButton(
+            buttonTitle: 'RE-CALCULATE',
+            onTap: () {
+              Navigator.pop(context);
+            },
+          )
         ],
       ),
     );
