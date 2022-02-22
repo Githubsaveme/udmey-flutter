@@ -19,6 +19,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 60;
   // Color maleCardColor = inactiveCardColor;
   // Color femaleCardColor = inactiveCardColor;
   //
@@ -110,21 +111,30 @@ class _InputPageState extends State<InputPage> {
                       ),
                       Text(
                         'cm',
-                        style: KNumberTextStyle,
+                        style: KLabelTextStyle,
                       )
                     ],
                   ),
-                  Slider(
-                    value: height.toDouble(),
-                    min: 120,
-                    max: 220,
-                    activeColor:Color(0xFFEB1555) ,
-                    inactiveColor:Color(0xFF8D8E98) ,
-                    onChanged: (double newValue){
-                      setState(() {
-                        height=newValue.round();
-                      });
-                    },
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                        inactiveTrackColor: Color(0xFF8D8E98),
+                        activeTrackColor: Color(0xFFEAE1E4),
+                        thumbColor: Color(0xFFEB1555),
+                        overlayColor: Color(0x29EB1555),
+                        thumbShape:
+                            RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 30.0)),
+                    child: Slider(
+                      value: height.toDouble(),
+                      min: 120,
+                      max: 220,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -136,6 +146,35 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child: ReusableCard(
                   colour: KActiveCardColor,
+                  cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'WEIGHT',
+                        style: KLabelTextStyle,
+                      ),
+                      Text(
+                        weight.toString(),
+                        style: KNumberTextStyle,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          RoundIconButton(),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FloatingActionButton(
+                            backgroundColor: Color(0xFF4C4F5E),
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Expanded(
@@ -153,6 +192,26 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  RoundIconButton({this.icon});
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon),
+      onPressed: () {},
+      elevation: 6,
+      constraints: BoxConstraints.tightFor(
+        width: 56,
+        height: 56,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
