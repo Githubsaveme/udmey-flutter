@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LoginScreen extends StatefulWidget {
-  static const String id='login_screen';
+  static const String id = 'login_screen';
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -18,11 +19,23 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Hero(tag: 'logo',
+            Hero(
+              tag: 'logo',
               child: Container(
                 height: 200.0,
                 child: Image.asset('images/logo.png'),
               ),
+            ),
+            TextLiquidFill(
+              text: 'Login Here',
+              waveColor: Colors.blueAccent,
+              boxBackgroundColor: Colors.white,
+
+              textStyle: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,color: Colors.white
+              ),
+              boxHeight: 50.0,
             ),
             SizedBox(
               height: 48.0,
